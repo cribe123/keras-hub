@@ -200,7 +200,7 @@ class Tokenizer(PreprocessingLayer):
         asset_path = None
         for asset in self.file_assets:
             subdir = self.config_file.split(".")[0]
-            preset_path = os.path.join(ASSET_DIR, subdir, asset)
+            preset_path = f"{ASSET_DIR}/{subdir}/{asset}"
             asset_path = get_file(preset, preset_path)
         tokenizer_config_file = os.path.dirname(asset_path)
         self.load_assets(tokenizer_config_file)
